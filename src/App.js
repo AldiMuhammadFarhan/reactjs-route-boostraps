@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Utama from './Component/utama';
+import { Navbar, Nav } from 'react-bootstrap';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {/* <hr />
+        <Link to="/">Beranda</Link> |
+        <Link to="/tentang">Tentang Saya</Link> |
+        <Link to="/karya">Karya</Link> |
+        <Link to="/kontak">Kontak</Link> <hr /> */}
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="/#home">Aldi Muhammad Farhan</Navbar.Brand>
+          <Nav className="mr-auto">
+            <Link to="/">Beranda</Link> |
+            <Link to="/tentang">Tentang Saya</Link> |
+            <Link to="/karya">Karya</Link> |
+            <Link to="/kontak">Kontak</Link>
+          </Nav>
+        </Navbar>
+        <p><Utama /></p>
+      </div>
+    );
+  }
 }
 
 export default App;
